@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>教师管理</title>
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+<body class="container">
+	<div class="row">
+        <div class="col-md-12">
+			<table class="table table-hover table-bordered">
+				<tr class="info">
+					<th>序号</th>
+					<th>姓名</th>
+					<th>性别</th>
+					<th>邮箱</th>
+					<th>用户名</th>
+				</tr>
+			   {volist name="teachers" id="teacher"}
+				<tr>
+					<td>{$teacher.id}</td>
+					<td>{$teacher.name}</td>
+					<td>{eq name='$teacher.sex' value='1'}男{else/}女{/eq}</td>
+					<td>{$teacher.email}</td>
+					<td>{$teacher.username}</td>
+				</tr>
+				{/volist}
+			</table>
+		</div>
+	</div>
+</body>
+</html>
